@@ -1,15 +1,16 @@
 <div class="wrapper">
   <div id="gameplay">
     <h1>{{(gameToDisplay | async)?.park}}</h1>
-    <h3>Time of Game</h3>
+    <h3>{{(gameToDisplay | async)?.time}}</h3>
     <div id=main-area>
       <div id="join-area">
         <div id="teamA">
           <h4>Team A</h4>
+          <button>Click to Join!</button>
         </div>
         <div id="teamB">
           <h4>Team B</h4>
-
+          <button>Click to Join!</button>
         </div>
       </div>
       <div id="leaderboard">

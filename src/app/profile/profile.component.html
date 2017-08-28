@@ -1,12 +1,19 @@
 <div class="wrapper">
-  <h2>Name's Profile</h2>
-  <button><a routerLink='/gameplay'>Find a Game</a></button><button><a routerLink='/add'>Create Game</a></button>
+
+  <h2>Hey {{username}} 's Profile</h2>
+
+  <button><a routerLink='/select'>Find a Game</a></button><button><a routerLink='/add'>Create Game</a></button>
   <br>
-  <label>Username</label>
-  <input id="username" placeholder="Michael Jordan">
-  <label>Image Upload</label>
-  <input id="image" placeholder="Upload image">
-  <label>Favorite NBA Team</label>
-  <input id="favorite-team" placeholder="Enter your Favorite Team">
-  <button id="submit">Submit</button>
+  <form>
+    <label>Username</label>
+    <input [(ngModel)]="username" type="text" placeholder="Michael Jordan">
+
+    <label>Image Upload</label>
+    <input id="image" placeholder="Upload image">
+
+    <label>Favorite NBA Team</label>
+    <input id="favorite-team" placeholder="Enter your Favorite Team">
+
+    <button id="submit">Submit</button>
+  </form>
 </div>
