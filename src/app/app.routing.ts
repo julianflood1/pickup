@@ -35,12 +35,12 @@ const appRoutes: Routes = [
     component: AddComponent
   },
   {
-    path: 'gameplay',
-    component: GameplayComponent
-  },
-  {
     path: 'select',
     component: SelectComponent
+  },
+  {
+    path: 'games/:id',
+    component: GameplayComponent
   }
 
 ];

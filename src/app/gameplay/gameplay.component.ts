@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 import { Game } from '../game.model';
-import { Router } from '@angular/router';
 import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
@@ -11,15 +12,20 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers:[GameService]
 })
 export class GameplayComponent implements OnInit {
-  games: FirebaseListObservable<any[]>;
+  // games: FirebaseListObservable<any[]>;
 
   gameId:string;
   gameToDisplay;
 
-  constructor(private gameService: GameService) { }
+  constructor(private route: ActivatedRoute,
+              private location: Location,
+              private gameService: GameService
+            ) { }
 
   ngOnInit() {
-    this.games = this.gameService.getGames();
+    this.route.params.forEach((urlParameters) => {
+      this.gameId = urlParameters['id'];
+    });
     this.gameToDisplay = this.gameService.getGameById(this.gameId);
   }
 

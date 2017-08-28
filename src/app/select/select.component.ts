@@ -14,12 +14,32 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class SelectComponent implements OnInit {
 
   games: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
+  showGame: boolean = false;
 
-  constructor(private gameService: GameService) { }
+  constructor(private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
     this.games = this.gameService.getGames();
   }
+
+  getValue(newValue: Game){
+    console.log(newValue);
+    this.showGame = true;
+  }
+
+  newEvent(park:string, time:string, addInfo:string){
+    var newGame: Game = new Game(park, time, addInfo);
+    this.gameService.addGame(newGame);
+    alert('New Event has been added!');
+    }
+
+    goToDetailPage(clickedGame) {
+      this.router.navigate(['games',clickedGame.$key]);
+    }
+  // onChange(optionFromMenu) {
+  //   console.log(this.games)
+  // }
 
 }
