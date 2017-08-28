@@ -1,3 +1,24 @@
-<p>
-  add works!
-</p>
+<div class="wrapper">
+  <button><a routerLink='/gameplay'>Find a Game</a></button>
+  <button><a routerLink='/profile'>Back to Profile</a></button>
+  <div id="add-game">
+    <h2>Create a Game Event</h2>
+    <form>
+      <select id="park" #park>
+        <option>Select a Park</option>
+        <option value="laurelhurst">Laurelhurst</option>
+        <option value="alberta">Alberta</option>
+        <option value="irving">Irving</option>
+        <option value="chinatownPark">Chinatown Park</option>
+        <option value="colonelSummers">Colonel Summers</option>
+      </select>
+<br>
+      <h3>Select a time:</h3>
+        <input type="time" name="user-time" id="time" #time>
+<br>
+      <textarea placeholder="Additional Information" #addInfo></textarea>
+<br>
+      <button (click)="newEvent(park.value, time.value, addInfo.value)">Add a New Event</button>
+    </form>
+    </div>
+</div>

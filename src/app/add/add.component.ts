@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import { Game } from '../game.model';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.scss'],
+  providers: [GameService]
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
+
+  newEvent(park:string, time:string, addInfo:string){
+    var newGame: Game = new Game(park, time, addInfo);
+    this.gameService.addGame(newGame);
+    alert('New Event has been added!');
+    }
 
 }

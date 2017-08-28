@@ -1,0 +1,30 @@
+#select {
+  background-color: grey;
+}
+
+#gameplay {
+  background-color: lightblue;
+}
+
+#join-area {
+  display: flex;
+  width: 70%;
+  background-color: white;
+  height: 400px;
+}
+#leaderboard {
+  width: 30%;
+  background-color: coral;
+  height: 400px;
+
+}
+
+#main-area {
+  width: 100%;
+  display: flex;
+}
+
+#teamA {
+  width: 50%;
+  border-right: 2px solid black
+}
