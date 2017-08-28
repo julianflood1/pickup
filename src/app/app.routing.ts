@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddComponent } from './add/add.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { SelectComponent } from './select/select.component';
 
 const appRoutes: Routes = [
   {
@@ -36,6 +37,10 @@ const appRoutes: Routes = [
   {
     path: 'gameplay',
     component: GameplayComponent
+  },
+  {
+    path: 'select',
+    component: SelectComponent
   }
 
 ];

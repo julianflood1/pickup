@@ -16,6 +16,7 @@ import { GameplayComponent } from './gameplay/gameplay.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SelectComponent } from './select/select.component';
 
 
 export const firebaseConfig = {
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     SignupComponent,
     ProfileComponent,
     AddComponent,
-    GameplayComponent
+    GameplayComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div id="select">
+    <h3>Select a Park to View Current Games</h3>
+      <select>
+        <option>Select a Game</option>
+        <option *ngFor="let game of games | async">{{game.park}} - {{game.time}}</option>
+      </select>
+    <h3>OR</h3>
+  <button><a routerLink='/add'>Make a New Game</a></button>
+  </div>
+</div>
+<div id="render" *ngIf="">
+  <app-gameplay></app-gameplay>
+</div>
