@@ -37,12 +37,14 @@ export class AuthenticationService {
         alert(error.message);
       })
       this.local =this.afAuth.auth.currentUser;
-      console.log(this.local);
+      console.log(this.user);
   }
 
   logout() {
     this.afAuth.auth.signOut().catch(error=> {
       alert(error.message);
+      console.log(this.user);
+
     })
   }
 

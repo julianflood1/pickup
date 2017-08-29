@@ -1,10 +1,11 @@
-<div class="wrapper">
-  <p>
-    signin works!
-  </p>
-  <input id="email" placeholder="Enter your email" #loginEmail>
-  <input id="password" type="password" placeholder="Enter your Password" #loginPassword>
-  <button (click)="loginUser(loginEmail.value, loginPassword.value)">Sign in</button>
-  <br>
-  <a routerLink=''>Back</a>
+<div class="container">
+  <div class="wrapper">
+        <img class="logo" src="/../assets/big-logo.png" alt="big logo">
+    <div class="backdrop">
+      <input id="email" placeholder="Enter your email" #loginEmail>
+      <input id="password" type="password" placeholder="Enter your Password" #loginPassword>
+      <button (click)="loginUser(loginEmail.value, loginPassword.value)">Sign in</button>
+    </div>
+  </div>
+  <a routerLink='' type="submit">Back</a>
 </div>

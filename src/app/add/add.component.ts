@@ -17,8 +17,11 @@ export class AddComponent implements OnInit {
 
   newEvent(park:string, time:string, addInfo:string){
     var newGame: Game = new Game(park, time, addInfo);
+    if((newGame.time === '') || (newGame.park === 'Select Park')) {
+      alert('Please fill out required fields!')
+    } else {
     this.gameService.addGame(newGame);
     alert('New Event has been added!');
     }
-
+  }
 }

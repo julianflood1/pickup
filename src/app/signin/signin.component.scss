@@ -1,0 +1,21 @@
+  input {
+    width: 50%;
+    margin: 5%;
+    height:25px;
+  }
+
+.wrapper{
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.backdrop {
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
+}
+
+img {
+  width:650px;
+  height: 350px;
+  margin-bottom: 20px;
+}
