@@ -3,8 +3,9 @@
     signup works!
   </p>
   <input id="email" placeholder="Enter your email" #signupEmail>
-  <input id="password" placeholder="Enter your Password" #signupPassword>
-  <button (click)="signupUser(signupEmail.value, signupPassword.value)">Sign Up</button>
+  <input id="username" placeholder="Enter your username" #signupUsername>
+  <input id="password" placeholder="Enter your Password" type="password" #signupPassword>
+  <button (click)="signupUser(signupEmail.value, signupUsername.value, signupPassword.value)">Sign Up</button>
   <br>
   <a routerLink=''>Back</a>
 </div>

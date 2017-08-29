@@ -12,7 +12,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers:[GameService]
 })
 export class GameplayComponent implements OnInit {
-  // games: FirebaseListObservable<any[]>;
 
   gameId:string;
   gameToDisplay;

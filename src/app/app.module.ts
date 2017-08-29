@@ -12,10 +12,15 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddComponent } from './add/add.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { FirebaseToAppService } from './firebase-app.service';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AuthenticationService } from './authentication.service';
+import { AngularFireAuthModule } from 'angularfire2/auth'; //authmod
+
+
 import { SelectComponent } from './select/select.component';
 
 
@@ -41,11 +46,13 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthenticationService, FirebaseToAppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

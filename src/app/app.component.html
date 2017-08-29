@@ -3,4 +3,7 @@
     Welcome to {{title}}!
   </h1>
 <router-outlet></router-outlet>
+<div *ngIf="isLoggedIn">
+  <button (click)="logout()">Logout</button>
+</div>
 </div>

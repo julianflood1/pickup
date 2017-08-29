@@ -1,6 +1,8 @@
 <div class="wrapper">
 
-  <h2>Hey UserName's Profile</h2>
+<div *ngFor="let user of users | async">
+  <h2>Hey {{user.userName}} Profile</h2>
+</div>
 
   <button><a routerLink='/select'>Find a Game</a></button><button><a routerLink='/add'>Create Game</a></button>
   <br>
@@ -14,6 +16,6 @@
     <label>Favorite NBA Team</label>
     <input id="favorite-team" placeholder="Enter your Favorite Team" #FavTeam>
 
-    <button (click)="createNewUser(UserName.value, ProfileImage.value, FavTeam.value)">Submit</button>
+    <button (click)="updateUser(UserName.value, ProfileImage.value, FavTeam.value)">Submit</button>
   </form>
 </div>

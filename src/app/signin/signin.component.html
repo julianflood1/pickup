@@ -3,7 +3,7 @@
     signin works!
   </p>
   <input id="email" placeholder="Enter your email" #loginEmail>
-  <input id="password" placeholder="Enter your Password" #loginPassword>
+  <input id="password" type="password" placeholder="Enter your Password" #loginPassword>
   <button (click)="loginUser(loginEmail.value, loginPassword.value)">Sign in</button>
   <br>
   <a routerLink=''>Back</a>
