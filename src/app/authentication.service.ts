@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable'; //used for user instance
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app'; //access to firebase
-import { User } from './user.model';
+import { Profile } from './profile.model';
 
 @Injectable()
 export class AuthenticationService {
@@ -36,15 +36,12 @@ export class AuthenticationService {
       .catch(error => {
         alert(error.message);
       })
-      this.local =this.afAuth.auth.currentUser;
-      console.log(this.user);
+      this.local = this.afAuth.auth.currentUser;
   }
 
   logout() {
     this.afAuth.auth.signOut().catch(error=> {
       alert(error.message);
-      console.log(this.user);
-
     })
   }
 

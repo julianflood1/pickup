@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .wrapper {
-  width: 80vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -17,6 +17,10 @@ html, body, a {
 
 }
 
+body {
+  background-image: url('/../assets/basketball.jpg');
+  background-position: left;
+}
 .backdrop {
   display: flex;
   flex-direction: column;
@@ -32,5 +36,4 @@ html, body, a {
   flex-direction: column;
   display: flex;
   align-items: center;
-
 }

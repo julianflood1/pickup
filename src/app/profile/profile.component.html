@@ -1,7 +1,7 @@
 <div class="wrapper">
 
 <div *ngFor="let user of users | async">
-  <h2>Hey {{user.userName}} Profile</h2>
+  <h2>Hey {{this.usersFromDB[0].favTeam}} Profile</h2>
 </div>
 
   <button><a routerLink='/select'>Find a Game</a></button><button><a routerLink='/add'>Create Game</a></button>

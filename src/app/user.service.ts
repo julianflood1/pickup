@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { User } from './user.model';
+import { Profile } from './profile.model';
 
 @Injectable()
 export class UserService {
-  users: FirebaseListObservable<any[]>;
+  profiles: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.users = database.list('users');
+    this.profiles = database.list('profiles');
   }
 
   getUsers(){
-    return this.users;
+    return this.profiles;
   }
 
-  addUser(newUser: User) {
-    this.users.push(newUser);
+  addProfile(newProfile: Profile) {
+    this.profiles.push(newProfile);
   }
 
   updateMember(localUpdatedUser){
