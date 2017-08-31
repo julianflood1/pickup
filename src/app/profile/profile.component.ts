@@ -25,9 +25,7 @@ export class ProfileComponent implements OnInit {
               private fireService: FirebaseToAppService) {
     this.fireService.getProfiles().subscribe(data => {
       this.profilesFromDB = data
-      console.log(this.profilesFromDB[1].uid)
        this.currentUserUID = this.authService.afAuth.auth.currentUser.uid
-      console.log(this.currentUserUID)
 
 
       // TO COMPARE UID'S FROM CURRENT USER TO PROFILE INFO TO DISPLAY
@@ -35,10 +33,7 @@ export class ProfileComponent implements OnInit {
             if(this.profiles.length > 0) {
               this.profiles.forEach(user => {
                 if (user.uid === this.currentUserUID) {
-                  console.log(user.uid);
-                  console.log(this.currentUserUID)
                   this.currentUser = user;
-                  console.log(this.currentUser)
                 }
               })
             }
@@ -55,10 +50,9 @@ export class ProfileComponent implements OnInit {
 //figure out how to tell database that currentUser is making the new User
   updateUser(userName:string, profileImage:string, favTeam:string, uid:string){
     var makeUid = this.currentUserUID
-    console.log(makeUid)
     var newProfile: Profile = new Profile(userName, profileImage, favTeam, makeUid);
     this.userService.addProfile(newProfile);
-    alert('New Profile has been created!');
+    alert('Profile Updated!');
     console.log(newProfile);
     }
 
