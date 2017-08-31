@@ -1,20 +1,23 @@
 <div class="wrapper">
   <div id="select">
 
+    <h2>Select a Game to Play</h2>
     <div *ngFor="let game of games | async">
-      <h3 (click)="goToDetailPage(game)">{{game.park}} + {{game.time}}</h3>
+      <div id="panel">
+        <h3 (click)="goToDetailPage(game)">{{game.park}} @ {{game.time}}</h3>
+      </div>
     </div>
 
-    <h3>Select a Park to View Current Games</h3>
+    <!-- <h3>Select a Park to View Current Games</h3>
       <select (change)="onChange($event.target.value)">
         <option>Select a Game</option>
         <option *ngFor="let game of games | async">{{game.park}} - {{game.time}}</option>
       </select>
-      <button (click)="getValue(newValue.value)">Go!</button>
+      <button (click)="getValue(newValue.value)">Go!</button> -->
     <h3>OR</h3>
   <button><a routerLink='/add'>Make a New Game</a></button>
   </div>
 </div>
 <div id="render" *ngIf="showGame === true">
-  <app-gameplay></app-gameplay>
+  <!-- <app-gameplay></app-gameplay> -->
 </div>

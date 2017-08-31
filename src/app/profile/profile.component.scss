@@ -1,7 +1,43 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-input, button {
-  width: 20%;
+input {
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+}
+#buttons{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+#profile-panel {
+  background-color: rgba(255, 255, 255, .7);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  img {
+    width:250px;
+    height: 250px;
+    border: 1px solid black;
+  }
+}
+
+#submission {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  width: 400px;
 }

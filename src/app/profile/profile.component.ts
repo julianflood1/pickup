@@ -47,15 +47,17 @@ export class ProfileComponent implements OnInit {
   }
 
 
-//figure out how to tell database that currentUser is making the new User
-  updateUser(userName:string, profileImage:string, favTeam:string, uid:string){
+  updateUser(userName:string, image:string, favTeam:string, uid:string){
     var makeUid = this.currentUserUID
-    var newProfile: Profile = new Profile(userName, profileImage, favTeam, makeUid);
-    this.userService.addProfile(newProfile);
-    alert('Profile Updated!');
-    console.log(newProfile);
+    var newProfile: Profile = new Profile(userName, image, favTeam, makeUid);
+    if((newProfile.userName === '') || (newProfile.image === '') || (newProfile.favTeam === '')) {
+      alert('Please Fill Out Forms Completely.')
+    } else {
+      this.userService.addProfile(newProfile);
+      alert('Profile Updated!');
+      console.log(newProfile);
+      }
     }
-
 
 
 

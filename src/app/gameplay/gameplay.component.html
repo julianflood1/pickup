@@ -1,5 +1,12 @@
 <div class="wrapper">
   <div id="gameplay">
+
+    <!-- <div *ngIf="this.currentUser">
+      <h2>{{this.currentUser.userName}}'s Profile</h2>
+      <h3>Favorite team: {{this.currentUser.favTeam}}</h3>
+      <img src="{{this.currentUser.image}}" alt="profile picture">
+    </div> -->
+
     <h1>{{(gameToDisplay | async)?.park}}</h1>
     <h3>{{(gameToDisplay | async)?.time}}</h3>
     <div id=main-area>

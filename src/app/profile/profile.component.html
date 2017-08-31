@@ -1,23 +1,23 @@
 <div class="wrapper">
+  <div id="buttons">
+    <a routerLink='/select'><button>Find a Game</button></a>
+    <a routerLink='/add'><button>Create Game</button></a>
+  </div>
 
-  <div *ngIf="this.currentUser">
+  <div id="profile-panel" *ngIf="this.currentUser">
     <h2>{{this.currentUser.userName}}'s Profile</h2>
     <h3>Favorite team: {{this.currentUser.favTeam}}</h3>
     <img src="{{this.currentUser.image}}" alt="profile picture">
   </div>
-
-  <button><a routerLink='/select'>Find a Game</a></button><button><a routerLink='/add'>Create Game</a></button>
   <br>
   <form>
-    <label>Username</label>
-    <input id="userName" type="text" placeholder="Michael Jordan" #UserName>
 
-    <label>Image Upload</label>
-    <input id="image" placeholder="Upload image" #ProfileImage>
+    <div id="submission">
+      <input id="userName" type="text" placeholder="Enter a Username" #UserName>
+      <input id="image" placeholder="Upload an Image" #ProfileImage>
+      <input id="favorite-team" placeholder="Enter your Favorite Team" #FavTeam>
+      <button (click)="updateUser(UserName.value, ProfileImage.value, FavTeam.value)">Submit</button>
+    </div>
 
-    <label>Favorite NBA Team</label>
-    <input id="favorite-team" placeholder="Enter your Favorite Team" #FavTeam>
-
-    <button (click)="updateUser(UserName.value, ProfileImage.value, FavTeam.value)">Submit</button>
   </form>
 </div>
