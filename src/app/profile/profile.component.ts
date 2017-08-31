@@ -54,7 +54,8 @@ export class ProfileComponent implements OnInit {
 
 //figure out how to tell database that currentUser is making the new User
   updateUser(userName:string, profileImage:string, favTeam:string, uid:string){
-    var makeUid = this.currentUser
+    var makeUid = this.currentUserUID
+    console.log(makeUid)
     var newProfile: Profile = new Profile(userName, profileImage, favTeam, makeUid);
     this.userService.addProfile(newProfile);
     alert('New Profile has been created!');
