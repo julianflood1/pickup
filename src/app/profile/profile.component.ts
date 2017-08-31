@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
 
   profiles;
   profilesFromDB;
-  currentUser;
+  currentUserUID;
+  currentUser = null;
 
   constructor(private userService: UserService,
               private authService: AuthenticationService,
@@ -25,15 +26,29 @@ export class ProfileComponent implements OnInit {
     this.fireService.getProfiles().subscribe(data => {
       this.profilesFromDB = data
       console.log(this.profilesFromDB[1].uid)
-       this.currentUser = this.authService.afAuth.auth.currentUser.uid
-      console.log(this.currentUser)
-      
+       this.currentUserUID = this.authService.afAuth.auth.currentUser.uid
+      console.log(this.currentUserUID)
+
+
+      // TO COMPARE UID'S FROM CURRENT USER TO PROFILE INFO TO DISPLAY
+          this.profiles = this.profilesFromDB;
+            if(this.profiles.length > 0) {
+              this.profiles.forEach(user => {
+                if (user.uid === this.currentUserUID) {
+                  console.log(user.uid);
+                  console.log(this.currentUserUID)
+                  this.currentUser = user;
+                  console.log(this.currentUser)
+                }
+              })
+            }
+
+
     })
   }
 
   ngOnInit() {
     this.profiles = this.profilesFromDB;
-    console.log(this.profiles)
   }
 
 
