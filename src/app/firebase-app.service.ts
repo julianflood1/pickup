@@ -17,11 +17,17 @@ export class FirebaseToAppService {
 
   constructor(private database: AngularFireDatabase, private http: Http, private authService: AuthenticationService) {
     this.profiles = this.database.list('profiles');
+    this.games = this.database.list('games');
   }
 
   getProfiles(){
     return this.profiles;
   }
+
+  getGames(){
+    return this.games;
+  }
+
 
 
 }

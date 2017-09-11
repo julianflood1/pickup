@@ -24,5 +24,8 @@ export class GameService {
     return this.database.object('games/' + gameId);
   }
 
+  updatePlayers(test: any[]){
+    this.games.push(test)
+  }
 
 }

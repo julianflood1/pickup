@@ -9,11 +9,18 @@
 
     <h1>{{(gameToDisplay | async)?.park}}</h1>
     <h3>{{(gameToDisplay | async)?.time}}</h3>
+    <h3>{{(gameToDisplay | async)?.teamA}}</h3>
+
+
     <div id=main-area>
       <div id="join-area">
         <div id="teamA">
           <h4>Team A</h4>
-          <div id="append-area"></div>
+          <div id="append-area">
+            <div *ngIf="join">
+              <h1>{{this.currentUser.userName}}</h1>
+            </div>
+          </div>
           <button (click)="joinGame()">Click to Join!</button>
         </div>
         <div id="teamB">

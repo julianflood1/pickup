@@ -29,8 +29,8 @@ export class SelectComponent implements OnInit {
     this.showGame = true;
   }
 
-  newEvent(park:string, time:string, addInfo:string){
-    var newGame: Game = new Game(park, time, addInfo);
+  newEvent(park:string, time:string, addInfo:string, teamA:any, teamB:any){
+    var newGame: Game = new Game(park, time, addInfo, teamA, teamB);
     this.gameService.addGame(newGame);
     alert('New Event has been added!');
     }
@@ -38,8 +38,6 @@ export class SelectComponent implements OnInit {
     goToDetailPage(clickedGame) {
       this.router.navigate(['games',clickedGame.$key]);
     }
-  // onChange(optionFromMenu) {
-  //   console.log(this.games)
-  // }
+
 
 }

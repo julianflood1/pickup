@@ -18,13 +18,5 @@ export class UserService {
     this.profiles.push(newProfile);
   }
 
-  updateMember(localUpdatedUser){
- // var userEntryInFirebase = this.getUserById(localUpdatedUser.$key);
- // userEntryInFirebase.update({name: localUpdatedMember.name,
- //                             thumbName: localUpdatedMember.thumbName,
- //                             age: localUpdatedMember.age,
- //                             experience: localUpdatedMember.experience,
- //                             specialty: localUpdatedMember.specialty});
-}
 
 }

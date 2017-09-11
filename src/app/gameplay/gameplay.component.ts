@@ -6,6 +6,8 @@ import { GameService } from '../game.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { AuthenticationService } from '../authentication.service';
 import { FirebaseToAppService } from '../firebase-app.service';
+import * as firebase from "firebase";
+
 
 
 @Component({
@@ -25,6 +27,15 @@ export class GameplayComponent implements OnInit {
   currentUserUID;
   currentUser = null;
 
+  // teamA = [];
+  games;
+  gamesfromDB;
+  currentGame;
+
+  join = null;
+
+
+
   constructor(private route: ActivatedRoute,
               private location: Location,
               private gameService: GameService,
@@ -40,11 +51,23 @@ export class GameplayComponent implements OnInit {
                    this.profiles.forEach(user => {
                      if (user.uid === this.currentUserUID) {
                        this.currentUser = user;
-                       console.log(this.currentUser)
                      }
                    })
                  }
 
+             })
+             this.fireService.getGames().subscribe(data => {
+               this.gamesfromDB = data
+
+               this.games = this.gamesfromDB;
+               if(this.games.length > 0) {
+                 this.games.forEach(game => {
+                   if(game.$key === this.gameId) {
+                     this.currentGame = game;
+                    //  console.log(this.currentGame)
+                   }
+                 })
+               }
              })
             }
 
@@ -56,8 +79,14 @@ export class GameplayComponent implements OnInit {
     this.gameToDisplay = this.gameService.getGameById(this.gameId);
   }
 
-  joinGame(){
-    
+  joinGame(game){
+    this.join = true;
+    game = this.currentGame;
+    this.currentGame.teamA.push(this.currentUser);
+    this.gameService.updatePlayers(this.currentGame.teamA);
+    // game.teamA.push(this.currentUser);
+    console.log(game.teamA);
+    console.log(this.currentUser.userName)
   }
 
 }
