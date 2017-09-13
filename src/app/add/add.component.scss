@@ -1,0 +1,39 @@
+.wrapper {
+  align-items: center;
+}
+
+#buttons {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.backdrop {
+  margin-top: 10%;
+  border-radius: 10px;
+  height: 80%;
+  margin-bottom: 10%;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+}
+select {
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+}
+
+h2 {
+  margin-bottom: 20%;
+}
+
+textarea {
+  margin-top: 20%;
+  height: 50px;
+  font-size: 15px;
+}

@@ -27,7 +27,6 @@ export class GameplayComponent implements OnInit {
   currentUserUID;
   currentUser = null;
 
-  // teamA = [];
   games;
   gamesfromDB;
   currentGame;
@@ -64,7 +63,7 @@ export class GameplayComponent implements OnInit {
                  this.games.forEach(game => {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
-                    //  console.log(this.currentGame)
+                     console.log(this.currentGame)
                    }
                  })
                }
@@ -72,6 +71,7 @@ export class GameplayComponent implements OnInit {
             }
 
   ngOnInit() {
+
     this.profiles = this.profilesFromDB;
     this.route.params.forEach((urlParameters) => {
       this.gameId = urlParameters['id'];
@@ -81,12 +81,8 @@ export class GameplayComponent implements OnInit {
 
   joinGame(game){
     this.join = true;
-    game = this.currentGame;
-    this.currentGame.teamA.push(this.currentUser);
-    this.gameService.updatePlayers(this.currentGame.teamA);
-    // game.teamA.push(this.currentUser);
-    console.log(game.teamA);
-    console.log(this.currentUser.userName)
+
+    this.gameService.updateGame(this.currentGame, this.currentUser)
   }
 
 }

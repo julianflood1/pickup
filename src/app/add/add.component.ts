@@ -16,7 +16,7 @@ export class AddComponent implements OnInit {
   }
 
   newEvent(park:string, time:string, addInfo:string, teamA: any[], teamB: any[]){
-    var teamA:any[] = ["hello",3,"yes"];
+    var teamA:any[] = [" "];
     var teamB:any[] = ["this", 5, "shouldowrd"];
     var newGame: Game = new Game(park, time, addInfo, teamA, teamB);
     if((newGame.time === '') || (newGame.park === 'Select Park')) {

@@ -1,24 +1,28 @@
 <div class="wrapper">
-  <button><a routerLink='/select'>Find a Game</a></button>
-  <button><a routerLink='/profile'>Back to Profile</a></button>
-  <div id="add-game">
+  <div id="buttons">
+    <button><a routerLink='/select'>Find a Game</a></button>
+    <button><a routerLink='/profile'>Back to Profile</a></button>
+  </div>
+  <div class="backdrop">
     <h2>Create a Game Event</h2>
     <form>
-      <select id="park" #park required>
-        <option>Select a Park</option>
-        <option value="Laurelhurst">Laurelhurst</option>
-        <option value="Alberta">Alberta</option>
-        <option value="Irving">Irving</option>
-        <option value="Chinatown Park">Chinatown Park</option>
-        <option value="Colonel Summers">Colonel Summers</option>
-      </select>
-<br>
-      <h3>Select a time:</h3>
-        <input type="time" name="user-time" id="time" #time required>
-<br>
-      <textarea placeholder="Additional Information" #addInfo></textarea>
-<br>
-      <button (click)="newEvent(park.value, time.value, addInfo.value)">Add a New Event</button>
+      <div id="inputs">
+        <select id="park" #park required>
+          <option>Select a Park</option>
+          <option value="Laurelhurst">Laurelhurst</option>
+          <option value="Alberta">Alberta</option>
+          <option value="Irving">Irving</option>
+          <option value="Chinatown Park">Chinatown Park</option>
+          <option value="Colonel Summers">Colonel Summers</option>
+        </select>
+        <br>
+        <h3>Select a time:</h3>
+          <input type="time" name="user-time" id="time" #time required>
+          <br>
+        <textarea placeholder="Additional Information" #addInfo></textarea>
+        <br>
+      </div>
     </form>
-    </div>
+  </div>
+  <button (click)="newEvent(park.value, time.value, addInfo.value)">Add a New Event</button>
 </div>
