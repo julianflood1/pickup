@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddComponent } from './add/add.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
 import { FirebaseToAppService } from './firebase-app.service';
+import { GameService } from './game.service';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -52,7 +53,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthenticationService, FirebaseToAppService],
+  providers: [AuthenticationService, FirebaseToAppService, GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

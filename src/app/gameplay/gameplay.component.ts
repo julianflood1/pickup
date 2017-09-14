@@ -32,6 +32,9 @@ export class GameplayComponent implements OnInit {
   currentGame;
 
   join = null;
+  full= true;
+
+
 
 
 
@@ -55,15 +58,18 @@ export class GameplayComponent implements OnInit {
                  }
 
              })
+
+             this.route.params.forEach((urlParameters) => {
+               this.gameId = urlParameters['id'];
+             });
+
              this.fireService.getGames().subscribe(data => {
                this.gamesfromDB = data
-
                this.games = this.gamesfromDB;
                if(this.games.length > 0) {
                  this.games.forEach(game => {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
-                     console.log(this.currentGame)
                    }
                  })
                }
@@ -71,18 +77,23 @@ export class GameplayComponent implements OnInit {
             }
 
   ngOnInit() {
-
-    this.profiles = this.profilesFromDB;
-    this.route.params.forEach((urlParameters) => {
-      this.gameId = urlParameters['id'];
-    });
     this.gameToDisplay = this.gameService.getGameById(this.gameId);
   }
 
-  joinGame(game){
+
+
+  joinGame(){
     this.join = true;
+    console.log(this.currentGame)
+    console.log(this.currentUser)
+
+    this.gameService.pushGame(this.currentGame, this.currentUser)
 
     this.gameService.updateGame(this.currentGame, this.currentUser)
+    if(this.currentGame.teamA.length > 5) {
+      this.full = false;
+    }
+    console.log(this.full)
   }
 
 }

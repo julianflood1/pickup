@@ -11,7 +11,6 @@ import { AuthenticationService } from './authentication.service';
 export class FirebaseToAppService {
   games: FirebaseListObservable<any[]>;
   profiles: FirebaseListObservable<any[]>;
-  profileToUpdate: FirebaseListObservable<any[]>;
 
 
 
