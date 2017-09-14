@@ -1,15 +1,12 @@
+<div id="profile-panel" *ngIf="this.currentUser">
+  <img src="{{this.currentUser.image}}" alt="profile picture">
+</div>
 <div class="wrapper">
   <div id="gameplay">
 
-    <div id="profile-panel" *ngIf="this.currentUser">
-      <h2>{{this.currentUser.userName}}'s Profile</h2>
-      <h3>Favorite team: {{this.currentUser.favTeam}}</h3>
-      <img src="{{this.currentUser.image}}" alt="profile picture">
-    </div>
 
     <h1>{{(gameToDisplay | async)?.park}}</h1>
     <h3>{{(gameToDisplay | async)?.time}}</h3>
-    <h3>{{(gameToDisplay | async)?.teamA}}</h3>
 
 
     <div id=main-area>
@@ -37,17 +34,43 @@
             </div>
             <img src="{{(gameToDisplay | async)?.teamA[3].image}}" alt="a picture of the user">
           </div>
-          <div *ngIf="full">
-            <button (click)="joinGame()">Click to Join!</button>
+          <div *ngIf="fullA">
+            <button (click)="joinGameA()">Click to Join!</button>
           </div>
-          <div *ngIf="!full">
+          <div *ngIf="!fullA">
             <h2>TEAM FULL!</h2>
           </div>
 
         </div>
         <div id="teamB">
-          <h4>Team B</h4>
-          <button>Click to Join!</button>
+          <h1>Team B</h1>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamB[1]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamB[1].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamB[1].favTeam}}</p>
+            </div>
+            <img src="{{(gameToDisplay | async)?.teamB[1].image}}" alt="a picture of the user">
+          </div>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamB[2]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamB[2].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamB[2].favTeam}}</p>
+            </div>
+            <img src="{{(gameToDisplay | async)?.teamB[1].image}}" alt="a picture of the user">
+          </div>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamB[3]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamB[3].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamB[3].favTeam}}</p>
+            </div>
+            <img src="{{(gameToDisplay | async)?.teamB[3].image}}" alt="a picture of the user">
+          </div>
+          <div *ngIf="fullB">
+            <button (click)="joinGameB()">Click to Join!</button>
+          </div>
+          <div *ngIf="!fullB">
+            <h2>TEAM FULL!</h2>
+          </div>
         </div>
       </div>
       <div id="leaderboard">

@@ -31,11 +31,8 @@ export class GameplayComponent implements OnInit {
   gamesfromDB;
   currentGame;
 
-  join = null;
-  full= true;
-
-  player1 = null;
-
+  fullA= true;
+  fullB = true;
 
   constructor(private route: ActivatedRoute,
               private location: Location,
@@ -70,7 +67,10 @@ export class GameplayComponent implements OnInit {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
                      if(this.currentGame.teamA.length >= 4) {
-                       this.full = false;
+                       this.fullA = false;
+                     }
+                     if(this.currentGame.teamB.length >= 4) {
+                       this.fullB = false;
                      }
                    }
                  })
@@ -83,17 +83,18 @@ export class GameplayComponent implements OnInit {
   }
 
 
-  joinGame(){
-    this.join = true;
-    console.log(this.currentUser)
-
-    this.gameService.pushGame(this.currentGame, this.currentUser)
-
-    this.gameService.updateGame(this.currentGame, this.currentUser)
+  joinGameA(){
+    this.gameService.teamAAdd(this.currentGame, this.currentUser)
     if(this.currentGame.teamA.length > 3) {
-      this.full = false;
+      this.fullA = false;
     }
-    console.log(this.full)
+  }
+
+  joinGameB(){
+    this.gameService.teamBAdd(this.currentGame, this.currentUser)
+    if(this.currentGame.teamB.length > 3) {
+      this.fullB = false;
+    }
   }
 
 }

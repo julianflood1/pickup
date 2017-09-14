@@ -24,15 +24,19 @@ export class GameService {
     return this.database.object('games/' + gameId);
   }
 
-
-  pushGame(currentGame,currentUser){
+  teamAAdd(currentGame, currentUser){
     currentGame.teamA.push(currentUser)
-
-  }
-  updateGame(currentGame, currentUser){
     var gameInFirebase = this.getGameById(currentGame.$key)
     gameInFirebase.update({
       teamA: currentGame.teamA
+    })
+  }
+
+  teamBAdd(currentGame, currentUser){
+    currentGame.teamB.push(currentUser)
+    var gameInFirebase = this.getGameById(currentGame.$key)
+    gameInFirebase.update({
+      teamB: currentGame.teamB
     })
   }
 }
