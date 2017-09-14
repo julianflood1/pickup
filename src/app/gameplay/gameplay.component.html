@@ -14,18 +14,36 @@
 
     <div id=main-area>
       <div id="join-area">
-        <div id="teamA">
-          <h4>Team A</h4>
-          <!-- <p>{{this.currentGame.teamA[1]}}</p> -->
-          <!-- <div *ngFor="let team of games.teamA">
-            <h4>{{game.teamA}}</h4>
-          </div> -->
-          <!-- <h4>{{(gameToDisplay | async)?.teamA[3].favTeam}}</h4> -->
-            <div *ngIf="join">
+        <div id="teamA" >
+          <h1>Team A</h1>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamA[1]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamA[1].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamA[1].favTeam}}</p>
             </div>
+            <img src="{{(gameToDisplay | async)?.teamA[1].image}}" alt="a picture of the user">
+          </div>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamA[2]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamA[2].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamA[2].favTeam}}</p>
+            </div>
+            <img src="{{(gameToDisplay | async)?.teamA[1].image}}" alt="a picture of the user">
+          </div>
+          <div class="player" *ngIf="(gameToDisplay | async)?.teamA[3]">
+            <div class="player-text">
+              <h3>{{(gameToDisplay | async)?.teamA[3].userName}}</h3>
+              <p>{{(gameToDisplay | async)?.teamA[3].favTeam}}</p>
+            </div>
+            <img src="{{(gameToDisplay | async)?.teamA[3].image}}" alt="a picture of the user">
+          </div>
           <div *ngIf="full">
             <button (click)="joinGame()">Click to Join!</button>
           </div>
+          <div *ngIf="!full">
+            <h2>TEAM FULL!</h2>
+          </div>
+
         </div>
         <div id="teamB">
           <h4>Team B</h4>

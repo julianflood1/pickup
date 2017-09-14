@@ -34,8 +34,7 @@ export class GameplayComponent implements OnInit {
   join = null;
   full= true;
 
-
-
+  player1 = null;
 
 
   constructor(private route: ActivatedRoute,
@@ -70,6 +69,9 @@ export class GameplayComponent implements OnInit {
                  this.games.forEach(game => {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
+                     if(this.currentGame.teamA.length >= 4) {
+                       this.full = false;
+                     }
                    }
                  })
                }
@@ -81,16 +83,14 @@ export class GameplayComponent implements OnInit {
   }
 
 
-
   joinGame(){
     this.join = true;
-    console.log(this.currentGame)
     console.log(this.currentUser)
 
     this.gameService.pushGame(this.currentGame, this.currentUser)
 
     this.gameService.updateGame(this.currentGame, this.currentUser)
-    if(this.currentGame.teamA.length > 5) {
+    if(this.currentGame.teamA.length > 3) {
       this.full = false;
     }
     console.log(this.full)
