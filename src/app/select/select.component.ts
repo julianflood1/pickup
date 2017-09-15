@@ -25,7 +25,6 @@ export class SelectComponent implements OnInit {
   }
 
   getValue(newValue: Game){
-    console.log(newValue);
     this.showGame = true;
   }
 

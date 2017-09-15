@@ -66,12 +66,15 @@ export class GameplayComponent implements OnInit {
                  this.games.forEach(game => {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
-                     if(this.currentGame.teamA.length >= 4) {
-                       this.fullA = false;
-                     }
+                    //  if(this.currentGame.teamA.length >= 4) {
+                    //    this.fullA = false;
+                    //  }
                      if(this.currentGame.teamB.length >= 4) {
                        this.fullB = false;
                      }
+                    //  if((this.currentGame.teamA.length >= 4) && (this.currentGame.teamB.length >= 4)) {
+                    //    alert('Both teams are full! Lets play!');
+                    //  }
                    }
                  })
                }
@@ -80,21 +83,41 @@ export class GameplayComponent implements OnInit {
 
   ngOnInit() {
     this.gameToDisplay = this.gameService.getGameById(this.gameId);
+
   }
 
 
+
+
   joinGameA(){
-    this.gameService.teamAAdd(this.currentGame, this.currentUser)
-    if(this.currentGame.teamA.length > 3) {
-      this.fullA = false;
+    if(this.currentGame.park === 'Laurelhurst') {
+      this.currentUser.laurelhurst += 1;
+    } else if (this.currentGame.park === 'Alberta') {
+      this.currentUser.alberta += 1;
+    } else if (this.currentGame.park === 'Irving') {
+      this.currentUser.irving += 1;
+    } else if (this.currentGame.park === 'Chinatown Park') {
+      this.currentUser.chinatownPark += 1;
+    } else if (this.currentGame.park === 'Colonel Summers') {
+      this.currentUser.colonelSummers += 1;
     }
+
+    this.gameService.leaderboardUpdate(this.currentUser)
+    
+    console.log(this.currentUser.laurelhurst)
+    console.log(this.currentUser.alberta)
+    console.log(this.currentUser.irving)
+    console.log(this.currentUser.chinatownPark)
+    console.log(this.currentUser.colonelSummers)
+
+
+    this.gameService.teamAAdd(this.currentGame, this.currentUser)
+
   }
 
   joinGameB(){
     this.gameService.teamBAdd(this.currentGame, this.currentUser)
-    if(this.currentGame.teamB.length > 3) {
-      this.fullB = false;
-    }
+
   }
 
 }

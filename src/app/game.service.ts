@@ -39,14 +39,11 @@ export class GameService {
       teamB: currentGame.teamB
     })
   }
+
+  leaderboardUpdate(currentUser){
+    var userInFirebase = currentUser
+    userInFirebase.update({
+      laurelhurst: currentUser.laurelhurst
+    })
+  }
 }
-
-
-//
-// game.teamA.push(currentUser)
-//
-// var gameInFirebase = this.getGameById(game.$key)
-//   gameInFirebase.update({
-//   teamA: game.teamA
-// })
-// }
