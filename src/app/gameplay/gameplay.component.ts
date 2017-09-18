@@ -34,6 +34,9 @@ export class GameplayComponent implements OnInit {
   fullA= true;
   fullB = true;
 
+  uid;
+
+
   constructor(private route: ActivatedRoute,
               private location: Location,
               private gameService: GameService,
@@ -43,6 +46,7 @@ export class GameplayComponent implements OnInit {
             this.fireService.getProfiles().subscribe(data => {
               this.profilesFromDB = data
                this.currentUserUID = this.authService.afAuth.auth.currentUser.uid
+               this.uid = this.currentUserUID
 
                this.profiles = this.profilesFromDB;
                  if(this.profiles.length > 0) {
@@ -59,6 +63,7 @@ export class GameplayComponent implements OnInit {
                this.gameId = urlParameters['id'];
              });
 
+
              this.fireService.getGames().subscribe(data => {
                this.gamesfromDB = data
                this.games = this.gamesfromDB;
@@ -72,9 +77,9 @@ export class GameplayComponent implements OnInit {
                      if(this.currentGame.teamB.length >= 4) {
                        this.fullB = false;
                      }
-                    //  if((this.currentGame.teamA.length >= 4) && (this.currentGame.teamB.length >= 4)) {
-                    //    alert('Both teams are full! Lets play!');
-                    //  }
+                     if((this.fullB === false) && (this.fullA === false)) {
+                       alert('Both teams are full! Lets play!');
+                     }
                    }
                  })
                }
@@ -83,13 +88,13 @@ export class GameplayComponent implements OnInit {
 
   ngOnInit() {
     this.gameToDisplay = this.gameService.getGameById(this.gameId);
-
   }
 
 
 
 
   joinGameA(){
+    console.log(this.currentUser)
     if(this.currentGame.park === 'Laurelhurst') {
       this.currentUser.laurelhurst += 1;
     } else if (this.currentGame.park === 'Alberta') {
@@ -103,7 +108,9 @@ export class GameplayComponent implements OnInit {
     }
 
     this.gameService.leaderboardUpdate(this.currentUser)
-    
+
+
+
     console.log(this.currentUser.laurelhurst)
     console.log(this.currentUser.alberta)
     console.log(this.currentUser.irving)
