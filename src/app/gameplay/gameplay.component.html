@@ -25,7 +25,7 @@
               <h3>{{(gameToDisplay | async)?.teamA[2].userName}}</h3>
               <p>{{(gameToDisplay | async)?.teamA[2].favTeam}}</p>
             </div>
-            <img src="{{(gameToDisplay | async)?.teamA[1].image}}" alt="a picture of the user">
+            <img src="{{(gameToDisplay | async)?.teamA[2].image}}" alt="a picture of the user">
           </div>
           <div class="player" *ngIf="(gameToDisplay | async)?.teamA[3]">
             <div class="player-text">
@@ -56,7 +56,7 @@
               <h3>{{(gameToDisplay | async)?.teamB[2].userName}}</h3>
               <p>{{(gameToDisplay | async)?.teamB[2].favTeam}}</p>
             </div>
-            <img src="{{(gameToDisplay | async)?.teamB[1].image}}" alt="a picture of the user">
+            <img src="{{(gameToDisplay | async)?.teamB[2].image}}" alt="a picture of the user">
           </div>
           <div class="player" *ngIf="(gameToDisplay | async)?.teamB[3]">
             <div class="player-text">
@@ -75,6 +75,18 @@
       </div>
       <div id="leaderboard">
         <h3>Leaderboard</h3>
+        <div id="leaders" *ngFor="let profile of profiles">
+          <div id="leader-panel">
+            <img src="{{profile.image}}" alt="profile img">
+            <p>{{profile.userName}}</p>
+            <p>{{profile.favTeam}}</p>
+            <p *ngIf="chinatownPark">{{profile.chinatownPark}}</p>
+            <p *ngIf="irving">{{profile.irving}}</p>
+            <p *ngIf="alberta">{{profile.alberta}}</p>
+            <p *ngIf="laurelhurst">{{profile.laurelhurst}}</p>
+            <p *ngIf="colonelSummers">{{profile.colonelSummers}}</p>
+          </div>
+        </div>
       </div>
     </div>
     <h1>{{(gameToDisplay | async)?.addInfo}}</h1>

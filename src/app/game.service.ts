@@ -29,18 +29,14 @@ export class GameService {
     return this.database.object('games/' + gameId);
   }
 
-  getUserById(uid: string){
-    return this.database.object('profiles/' + uid);
+  getUserById(userId: string){
+    return this.database.object('profiles/' + userId);
   }
 
   teamAAdd(currentGame, currentUser){
     currentGame.teamA.push(currentUser)
-    var gameInFirebase = this.getGameById(currentGame.$key)
 
-    gameInFirebase.subscribe(data => {
-      this.fire = data
-      console.log(this.fire)
-    })
+    var gameInFirebase = this.getGameById(currentGame.$key)
 
     gameInFirebase.update({
       teamA: currentGame.teamA
@@ -49,7 +45,9 @@ export class GameService {
 
   teamBAdd(currentGame, currentUser){
     currentGame.teamB.push(currentUser)
+
     var gameInFirebase = this.getGameById(currentGame.$key)
+    
     gameInFirebase.update({
       teamB: currentGame.teamB
     })
@@ -61,7 +59,10 @@ export class GameService {
       this.fire = data
     })
     userInFirebase.update({
+      laurelhurst: currentUser.laurelhurst,
       alberta: currentUser.alberta,
+      irving: currentUser.irving,
+      chinatownPark: currentUser.chinatownPark,
       colonelSummers: currentUser.colonelSummers
     })
   }

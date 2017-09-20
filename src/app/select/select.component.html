@@ -5,7 +5,7 @@
     <div id="panel-body" *ngFor="let game of games | async">
       <div id="panel">
         <h3 (click)="goToDetailPage(game)">{{game.park}} @ {{game.time}}</h3>
-        <p *ngIf="((game.teamB.length >= 3) && (game.teamA.length >= 3))">This one full</p>
+        <p *ngIf="((game.teamB.length >= 4) && (game.teamA.length >= 4))">This one full</p>
 
       </div>
     </div>

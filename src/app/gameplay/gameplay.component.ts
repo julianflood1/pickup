@@ -34,7 +34,14 @@ export class GameplayComponent implements OnInit {
   fullA= true;
   fullB = true;
 
-  uid;
+  leaderboard;
+  current
+
+  chinatownPark = null
+  irving = null
+  alberta = null
+  colonelSummers = null
+  laurelhurst = null
 
 
   constructor(private route: ActivatedRoute,
@@ -46,9 +53,10 @@ export class GameplayComponent implements OnInit {
             this.fireService.getProfiles().subscribe(data => {
               this.profilesFromDB = data
                this.currentUserUID = this.authService.afAuth.auth.currentUser.uid
-               this.uid = this.currentUserUID
 
                this.profiles = this.profilesFromDB;
+
+
                  if(this.profiles.length > 0) {
                    this.profiles.forEach(user => {
                      if (user.uid === this.currentUserUID) {
@@ -56,7 +64,6 @@ export class GameplayComponent implements OnInit {
                      }
                    })
                  }
-
              })
 
              this.route.params.forEach((urlParameters) => {
@@ -80,6 +87,21 @@ export class GameplayComponent implements OnInit {
                      if((this.fullB === false) && (this.fullA === false)) {
                        alert('Both teams are full! Lets play!');
                      }
+                     this.profiles.forEach(profile => {
+                       if(this.currentGame.park === 'Irving') {
+                         this.irving = true;
+                       } else if(this.currentGame.park === 'Laurelhurst') {
+                          this.laurelhurst = true;
+                       } else if(this.currentGame.park === 'Alberta') {
+                          this.alberta = true;
+                       } else if(this.currentGame.park === 'Colonel Summers')
+                        {
+                         this.colonelSummers = true;
+                       } else if(this.currentGame.park === 'Chinatown Park') {
+                         this.chinatownPark = true;
+                       }
+                     })
+
                    }
                  })
                }
@@ -94,7 +116,6 @@ export class GameplayComponent implements OnInit {
 
 
   joinGameA(){
-    console.log(this.currentUser)
     if(this.currentGame.park === 'Laurelhurst') {
       this.currentUser.laurelhurst += 1;
     } else if (this.currentGame.park === 'Alberta') {
@@ -110,20 +131,26 @@ export class GameplayComponent implements OnInit {
     this.gameService.leaderboardUpdate(this.currentUser)
 
 
-
-    console.log(this.currentUser.laurelhurst)
-    console.log(this.currentUser.alberta)
-    console.log(this.currentUser.irving)
-    console.log(this.currentUser.chinatownPark)
-    console.log(this.currentUser.colonelSummers)
-
-
     this.gameService.teamAAdd(this.currentGame, this.currentUser)
-
   }
 
   joinGameB(){
+    if(this.currentGame.park === 'Laurelhurst') {
+      this.currentUser.laurelhurst += 1;
+    } else if (this.currentGame.park === 'Alberta') {
+      this.currentUser.alberta += 1;
+    } else if (this.currentGame.park === 'Irving') {
+      this.currentUser.irving += 1;
+    } else if (this.currentGame.park === 'Chinatown Park') {
+      this.currentUser.chinatownPark += 1;
+    } else if (this.currentGame.park === 'Colonel Summers') {
+      this.currentUser.colonelSummers += 1;
+    }
+    this.gameService.leaderboardUpdate(this.currentUser)
+
     this.gameService.teamBAdd(this.currentGame, this.currentUser)
+
+
 
   }
 
