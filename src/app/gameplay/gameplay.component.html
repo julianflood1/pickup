@@ -4,10 +4,16 @@
 <div class="wrapper">
   <div id="gameplay">
 
-
-    <h1>{{(gameToDisplay | async)?.park}}</h1>
-    <h3>{{(gameToDisplay | async)?.time}}</h3>
-
+    <div id ="game-info">
+      <h1>{{(gameToDisplay | async)?.park}}</h1>
+      <h3>{{(gameToDisplay | async)?.time}}</h3>
+      <div *ngIf="alberta">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11173.186099651179!2d-122.6451045!3d45.5644753!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x779c416cabef73d5!2sAlberta+Park!5e0!3m2!1sen!2sus!4v1506119834924" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div *ngIf="alberta">
+        <img id="park" src="http://www.portlandplaysball.com/wp-content/uploads/2011/07/Alberta-park.jpg" alt="a picture of the park">
+      </div>
+  </div>
 
     <div id=main-area>
       <div id="join-area">
@@ -77,14 +83,20 @@
         <h3>Leaderboard</h3>
         <div id="leaders" *ngFor="let profile of profiles">
           <div id="leader-panel">
-            <img src="{{profile.image}}" alt="profile img">
-            <p>{{profile.userName}}</p>
-            <p>{{profile.favTeam}}</p>
-            <p *ngIf="chinatownPark">{{profile.chinatownPark}}</p>
-            <p *ngIf="irving">{{profile.irving}}</p>
-            <p *ngIf="alberta">{{profile.alberta}}</p>
-            <p *ngIf="laurelhurst">{{profile.laurelhurst}}</p>
-            <p *ngIf="colonelSummers">{{profile.colonelSummers}}</p>
+            <div id="leader-info">
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+                <p>{{profile.favTeam}}</p>
+              </div>
+            </div>
+            <div id="plays">
+              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+              <p *ngIf="irving">{{profile.irving}} plays</p>
+              <p *ngIf="alberta">{{profile.alberta}} plays</p>
+              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+            </div>
           </div>
         </div>
       </div>

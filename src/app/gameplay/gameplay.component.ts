@@ -89,6 +89,9 @@ export class GameplayComponent implements OnInit {
                      }
                      this.profiles.forEach(profile => {
                        if(this.currentGame.park === 'Irving') {
+                         this.current = profile.irving
+                         console.log(this.current)
+                         console.log(this.irving)
                          this.irving = true;
                        } else if(this.currentGame.park === 'Laurelhurst') {
                           this.laurelhurst = true;
