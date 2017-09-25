@@ -80,8 +80,8 @@
         </div>
       </div>
       <div id="leaderboard">
-        <h3>Leaderboard</h3>
-        <div id="leaders" *ngFor="let profile of profiles">
+        <h2>Leaderboard</h2>
+        <div id="leaders" *ngFor="let profile of profiles | playsSort">
           <div id="leader-panel">
             <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
