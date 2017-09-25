@@ -24,6 +24,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth'; //authmod
 
 import { SelectComponent } from './select/select.component';
 
+import { PlaysSortPipe } from './plays.pipe';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -42,7 +44,8 @@ export const firebaseConfig = {
     ProfileComponent,
     AddComponent,
     GameplayComponent,
-    SelectComponent
+    SelectComponent,
+    PlaysSortPipe
   ],
   imports: [
     BrowserModule,
