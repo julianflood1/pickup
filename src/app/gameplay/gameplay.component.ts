@@ -78,20 +78,15 @@ export class GameplayComponent implements OnInit {
                  this.games.forEach(game => {
                    if(game.$key === this.gameId) {
                      this.currentGame = game;
-                    //  if(this.currentGame.teamA.length >= 4) {
-                    //    this.fullA = false;
-                    //  }
+                     console.log(this.currentGame)
+                     if(this.currentGame.teamA.length >= 4) {
+                       this.fullA = false;
+                     }
                      if(this.currentGame.teamB.length >= 4) {
                        this.fullB = false;
                      }
-                     if((this.fullB === false) && (this.fullA === false)) {
-                       alert('Both teams are full! Lets play!');
-                     }
                      this.profiles.forEach(profile => {
                        if(this.currentGame.park === 'Irving') {
-                         this.current = profile.irving
-                         console.log(this.current)
-                         console.log(this.irving)
                          this.irving = true;
                        } else if(this.currentGame.park === 'Laurelhurst') {
                           this.laurelhurst = true;
@@ -104,11 +99,13 @@ export class GameplayComponent implements OnInit {
                          this.chinatownPark = true;
                        }
                      })
-
                    }
                  })
                }
              })
+             if((this.fullB === false) && (this.fullA === false)) {
+               alert('Both teams are full! Lets play!');
+             }
             }
 
   ngOnInit() {

@@ -10,6 +10,8 @@
     cursor: pointer;
   }
 }
+
+
 #panel-body {
   width: 100%;
   display: flex;
@@ -31,4 +33,8 @@
   padding-bottom: 20px;
   display: flex;
   align-items: center;
+}
+
+p {
+  color: red;
 }

@@ -24,7 +24,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth'; //authmod
 
 import { SelectComponent } from './select/select.component';
 
-import { PlaysSortPipe } from './plays.pipe';
+import { AlbertaSortPipe } from './alberta.pipe';
+import { IrvingSortPipe } from './irving.pipe';
+import { ChinatownSortPipe } from './chinatown.pipe';
+import { ColonelSortPipe } from './colonel.pipe';
+import { LaurelhurstSortPipe } from './laurelhurst.pipe';
+
 
 
 export const firebaseConfig = {
@@ -45,7 +50,11 @@ export const firebaseConfig = {
     AddComponent,
     GameplayComponent,
     SelectComponent,
-    PlaysSortPipe
+    AlbertaSortPipe,
+    IrvingSortPipe,
+    ChinatownSortPipe,
+    ColonelSortPipe,
+    LaurelhurstSortPipe
   ],
   imports: [
     BrowserModule,

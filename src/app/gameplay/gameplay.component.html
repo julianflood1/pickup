@@ -1,19 +1,52 @@
 <div id="profile-panel" *ngIf="this.currentUser">
-  <img src="{{this.currentUser.image}}" alt="profile picture">
+  <div id="logged-in">
+    <p>Currently Logged In</p>
+    <img src="{{this.currentUser.image}}" alt="profile picture">
+  </div>
 </div>
 <div class="wrapper">
   <div id="gameplay">
 
-    <div id ="game-info">
-      <h1>{{(gameToDisplay | async)?.park}}</h1>
-      <h3>{{(gameToDisplay | async)?.time}}</h3>
-      <div *ngIf="alberta">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11173.186099651179!2d-122.6451045!3d45.5644753!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x779c416cabef73d5!2sAlberta+Park!5e0!3m2!1sen!2sus!4v1506119834924" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div *ngIf="alberta" class="game-info">
+      <img class="park" src="http://www.portlandplaysball.com/wp-content/uploads/2011/07/Alberta-park.jpg" alt="a picture of the park">
+      <div id="park-specifics">
+        <h1>{{(gameToDisplay | async)?.park}}</h1>
+        <h3>{{(gameToDisplay | async)?.time}}</h3>
       </div>
-      <div *ngIf="alberta">
-        <img id="park" src="http://www.portlandplaysball.com/wp-content/uploads/2011/07/Alberta-park.jpg" alt="a picture of the park">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11173.186099651179!2d-122.6451045!3d45.5644753!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x779c416cabef73d5!2sAlberta+Park!5e0!3m2!1sen!2sus!4v1506119834924" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div *ngIf="irving" class="game-info">
+      <img class="park" src="http://www.portlandplaysball.com/wp-content/uploads/2011/07/Irving-park.jpg" alt="a picture of the park">
+      <div id="park-specifics">
+        <h1>{{(gameToDisplay | async)?.park}}</h1>
+        <h3>{{(gameToDisplay | async)?.time}}</h3>
       </div>
-  </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1761.1601488454683!2d-122.65801925660898!3d45.547384810002654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a7399db8460d%3A0x736995be4c9b3a7e!2sIrving+Park!5e0!3m2!1sen!2sus!4v1506795955237" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div *ngIf="laurelhurst" class="game-info">
+      <img class="park" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Laurelhurst_Park_basketball_court%2C_2011.JPG" alt="a picture of the park">
+      <div id="park-specifics">
+        <h1>{{(gameToDisplay | async)?.park}}</h1>
+        <h3>{{(gameToDisplay | async)?.time}}</h3>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.448467482332!2d-122.62933008439393!3d45.521180137660394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a0eac4eeb42d%3A0xa26df736588d055e!2sLaurelhurst+Park!5e0!3m2!1sen!2sus!4v1506796215010" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div *ngIf="colonelSummers" class="game-info">
+      <img class="park" src="http://media.oregonlive.com/portland_impact/photo/summersjpg-95be4f2aea4d6359.jpg" alt="a picture of the park">
+      <div id="park-specifics">
+        <h1>{{(gameToDisplay | async)?.park}}</h1>
+        <h3>{{(gameToDisplay | async)?.time}}</h3>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.7323767622775!2d-122.64887878439419!3d45.51546573804204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a0988720921f%3A0x82bbcf8c9c5a14ba!2sColonel+Summers+Park!5e0!3m2!1sen!2sus!4v1506796324294" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div *ngIf="chinatownPark" class="game-info">
+      <img class="park" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/ChinatownGatePortland.jpg/1280px-ChinatownGatePortland.jpg" alt="a picture of the park">
+      <div id="park-specifics">
+        <h1>{{(gameToDisplay | async)?.park}}</h1>
+        <h3>{{(gameToDisplay | async)?.time}}</h3>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.2573158498885!2d-122.681010884394!3d45.52502723740352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a019f1ebc59%3A0xb067d25174c38423!2sNorth+Park+Blocks!5e0!3m2!1sen!2sus!4v1506796877140" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
 
     <div id=main-area>
       <div id="join-area">
@@ -79,9 +112,9 @@
           </div>
         </div>
       </div>
-      <div id="leaderboard">
+      <div *ngIf="alberta" class="leaderboard">
         <h2>Leaderboard</h2>
-        <div id="leaders" *ngFor="let profile of profiles | playsSort">
+        <div id="leaders" *ngFor="let profile of profiles | AlbertaSort">
           <div id="leader-panel">
             <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
@@ -100,6 +133,92 @@
           </div>
         </div>
       </div>
+      <div *ngIf="irving" class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaders" *ngFor="let profile of profiles | IrvingSort">
+          <div id="leader-panel">
+            <div id="leader-info">
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+                <p>{{profile.favTeam}}</p>
+              </div>
+            </div>
+            <div id="plays">
+              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+              <p *ngIf="irving">{{profile.irving}} plays</p>
+              <p *ngIf="alberta">{{profile.alberta}} plays</p>
+              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="chinatownPark" class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaders" *ngFor="let profile of profiles | ChinatownSort">
+          <div id="leader-panel">
+            <div id="leader-info">
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+                <p>{{profile.favTeam}}</p>
+              </div>
+            </div>
+            <div id="plays">
+              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+              <p *ngIf="irving">{{profile.irving}} plays</p>
+              <p *ngIf="alberta">{{profile.alberta}} plays</p>
+              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="colonelSummers" class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaders" *ngFor="let profile of profiles | ColonelSort">
+          <div id="leader-panel">
+            <div id="leader-info">
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+                <p>{{profile.favTeam}}</p>
+              </div>
+            </div>
+            <div id="plays">
+              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+              <p *ngIf="irving">{{profile.irving}} plays</p>
+              <p *ngIf="alberta">{{profile.alberta}} plays</p>
+              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="laurelhurst" class="leaderboard">
+        <h2>Leaderboard</h2>
+        <div id="leaders" *ngFor="let profile of profiles | LaurelhurstSort">
+          <div id="leader-panel">
+            <div id="leader-info">
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+                <p>{{profile.favTeam}}</p>
+              </div>
+            </div>
+            <div id="plays">
+              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+              <p *ngIf="irving">{{profile.irving}} plays</p>
+              <p *ngIf="alberta">{{profile.alberta}} plays</p>
+              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
     <h1>{{(gameToDisplay | async)?.addInfo}}</h1>
     <button><a routerLink='/profile'>Back to Profile</a></button>
