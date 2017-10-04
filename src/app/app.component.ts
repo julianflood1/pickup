@@ -10,7 +10,6 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'PickUp';
 
   user;
   local;

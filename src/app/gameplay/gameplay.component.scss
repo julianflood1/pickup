@@ -29,8 +29,12 @@
   background-image: url('https://wallpaperscraft.com/image/board_black_line_texture_background_wood_55220_1920x1080.jpg');
   height: 500px;
   border: 5px solid gold;
-  padding-left: 15px;
   color: white;
+  h2 {
+    display: flex;
+    align-self: center;
+    // border: 3px solid gold;
+  }
 }
 
 #main-area {
@@ -91,10 +95,12 @@ img {
 }
 
 #leader-panel {
+  margin: 10px;
   display: flex;
   align-items: center;
   img {
-    margin:15px;
+    margin-right:10px;
+    margin-left: 10px;
     width: 50px;
     height: 50px;
   }
@@ -142,13 +148,18 @@ iframe{
 #profile-panel {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: -10%;
+  margin-top: 10%;
 }
 #logged-in{
+  background-color: rgba(255, 255, 255, .5);
   border-radius: 5px;
   padding: 5px;
   border: 1px solid black;
   display: flex;
+  height:50%;
   p {
     padding-right: 10px;
   }
@@ -165,5 +176,12 @@ iframe{
   }
   h3{
     font-size: 40px;
+  }
+}
+
+#logo {
+  img{
+    height:100px;
+    width: auto;
   }
 }

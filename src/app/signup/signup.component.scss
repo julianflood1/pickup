@@ -6,8 +6,12 @@ input {
 
 #back {
   align-self: flex-end;
-  margin: 10px;
   font-size: 20px;
+  margin-right: 50px;
+  border:1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
 }
 .wrapper{
   justify-content: flex-end;
@@ -20,8 +24,8 @@ input {
 }
 
 img {
-  width:650px;
-  height: 350px;
+  width:400px;
+  height: auto;
   margin-bottom: 20px;
 }
 

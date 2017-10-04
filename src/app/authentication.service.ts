@@ -15,7 +15,7 @@ export class AuthenticationService {
     this.user = afAuth.authState;
   }
 
-  createUser(email: string, username: string, password: string) {
+  createUser(email: string,  password: string) {
     let router: Router = this.router;
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(stuff => {

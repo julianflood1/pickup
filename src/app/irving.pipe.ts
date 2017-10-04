@@ -18,6 +18,9 @@ export class IrvingSortPipe implements PipeTransform {
           return 0;
         }
       });
+      if(array.length > 5) {
+        array.pop();
+      }
       return array;
     }
 }

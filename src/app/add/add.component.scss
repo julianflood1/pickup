@@ -1,5 +1,8 @@
 .wrapper {
   align-items: center;
+  button {
+    margin-top: 20px;
+  }
 }
 
 #buttons {
@@ -10,10 +13,8 @@
 }
 
 .backdrop {
-  margin-top: 10%;
+  margin-top: 50px;
   border-radius: 10px;
-  height: 80%;
-  margin-bottom: 10%;
   justify-content: flex-start;
   text-align: center;
 }
@@ -21,6 +22,13 @@
 #inputs {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  input{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
 }
 select {
   width: 200px;
@@ -29,10 +37,11 @@ select {
 }
 
 h2 {
-  margin-bottom: 20%;
+  margin-bottom: 50px;
 }
 
 textarea {
+  border-radius: 5px;
   margin-top: 20%;
   height: 50px;
   font-size: 15px;

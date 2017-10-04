@@ -1,4 +1,7 @@
 <div id="profile-panel" *ngIf="this.currentUser">
+  <div id="logo">
+    <img class="logo" src="/../assets/big-logo.png" alt="big logo">
+  </div>
   <div id="logged-in">
     <p>Currently Logged In</p>
     <img src="{{this.currentUser.image}}" alt="profile picture">
@@ -200,12 +203,10 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | LaurelhurstSort">
           <div id="leader-panel">
-            <div id="leader-info">
-              <img src="{{profile.image}}" alt="profile img">
-              <div id="profile-info">
-                <h3>{{profile.userName}}</h3>
-                <p>{{profile.favTeam}}</p>
-              </div>
+            <img src="{{profile.image}}" alt="profile img">
+            <div id="profile-info">
+              <h3>{{profile.userName}}</h3>
+              <p>{{profile.favTeam}}</p>
             </div>
             <div id="plays">
               <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>

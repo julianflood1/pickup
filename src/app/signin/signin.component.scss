@@ -15,8 +15,8 @@ input {
 }
 
 img {
-  width: 464px;
-  height: 252px;
+  width: 450px;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -35,4 +35,14 @@ a {
   & :hover {
     cursor: pointer;
     }
+  }
+
+  #back {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-right: 50px;
+    border:1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
   }
