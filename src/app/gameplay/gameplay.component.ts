@@ -120,24 +120,24 @@ export class GameplayComponent implements OnInit {
     //   return;
     // }
 
-    if(this.currentGame.teamA[1]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
-    if(this.currentGame.teamA[2]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
-    if(this.currentGame.teamA[3]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
+    // if(this.currentGame.teamA[1]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
+    // if(this.currentGame.teamA[2]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
+    // if(this.currentGame.teamA[3]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamA[2].userName) === (this.currentUser.userName) || (this.currentGame.teamA[3].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
 
 
 
@@ -165,24 +165,24 @@ export class GameplayComponent implements OnInit {
 
   joinGameB(){
 
-    if(this.currentGame.teamB[1]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
-    if(this.currentGame.teamB[2]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
-    if(this.currentGame.teamB[3]) {
-      if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
-        alert('You are already signed up to play this game!')
-        return;
-      }
-    }
+    // if(this.currentGame.teamB[1]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
+    // if(this.currentGame.teamB[2]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
+    // if(this.currentGame.teamB[3]) {
+    //   if((this.currentGame.teamA[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[1].userName) === (this.currentUser.userName) || (this.currentGame.teamB[2].userName) === (this.currentUser.userName) || (this.currentGame.teamB[3].userName) === (this.currentUser.userName)){
+    //     alert('You are already signed up to play this game!')
+    //     return;
+    //   }
+    // }
 
     if(this.currentGame.park === 'Laurelhurst') {
       this.currentUser.laurelhurst += 1;
@@ -196,13 +196,6 @@ export class GameplayComponent implements OnInit {
       this.currentUser.colonelSummers += 1;
     }
 
-    console.log(this.currentGame.teamB[1])
-    console.log(this.currentGame.teamB[2])
-    console.log(this.currentGame.teamB[3])
-    console.log(this.currentGame.teamA[1])
-    console.log(this.currentGame.teamA[2])
-    console.log(this.currentGame.teamA[3])
-    console.log(this.currentUser.userName)
 
       this.gameService.teamBAdd(this.currentGame, this.currentUser)
 

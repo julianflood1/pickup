@@ -10,11 +10,16 @@
   border-radius: 10px;
   border: 1px solid black;
   display: flex;
+  flex-direction: column;
   margin-top: 100px;
   margin-bottom: 100px;
   width: 500px;
-  justify-content: center;
-  height: 800px;
+  align-items: center;
+  height: 700px;
+  h3 {
+    margin-left: 200px;
+    margin-top: -5px;
+  }
   img {
     margin-top: 10%;
     width: 464px;

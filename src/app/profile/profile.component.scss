@@ -23,7 +23,7 @@ input {
   flex-direction: column;
   border: 1px solid black;
   width: 80%;
-  height: 80%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   img {
@@ -41,4 +41,16 @@ input {
 }
 form {
   width: 400px;
+  margin: 40px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+button {
+  margin: 40px;
 }
