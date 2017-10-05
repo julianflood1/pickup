@@ -108,17 +108,9 @@ img {
     height: 50px;
   }
 }
-#plays {
-  display: flex;
-  align-items: center;
-  // justify-content: flex-end;
-}
-#leader-info {
-  display: flex;
-  align-items: center;
-}
+
 #profile-info {
-  width: 17vw;
+  width: 100%;
 }
 
 #teamA h1, #teamB h1 {

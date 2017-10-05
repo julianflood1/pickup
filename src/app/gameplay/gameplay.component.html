@@ -119,20 +119,17 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | AlbertaSort">
           <div id="leader-panel">
-            <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
               <div id="profile-info">
                 <h3>{{profile.userName}}</h3>
-                <p>{{profile.favTeam}}</p>
               </div>
-            </div>
-            <div id="plays">
-              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
-              <p *ngIf="irving">{{profile.irving}} plays</p>
-              <p *ngIf="alberta">{{profile.alberta}} plays</p>
-              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
-              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
-            </div>
+              <div id="plays">
+                <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+                <p *ngIf="irving">{{profile.irving}} plays</p>
+                <p *ngIf="alberta">{{profile.alberta}} plays</p>
+                <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+                <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+              </div>
           </div>
         </div>
       </div>
@@ -140,20 +137,17 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | IrvingSort">
           <div id="leader-panel">
-            <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
               <div id="profile-info">
                 <h3>{{profile.userName}}</h3>
-                <p>{{profile.favTeam}}</p>
               </div>
-            </div>
-            <div id="plays">
-              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
-              <p *ngIf="irving">{{profile.irving}} plays</p>
-              <p *ngIf="alberta">{{profile.alberta}} plays</p>
-              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
-              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
-            </div>
+              <div id="plays">
+                <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+                <p *ngIf="irving">{{profile.irving}} plays</p>
+                <p *ngIf="alberta">{{profile.alberta}} plays</p>
+                <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+                <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+              </div>
           </div>
         </div>
       </div>
@@ -161,20 +155,17 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | ChinatownSort">
           <div id="leader-panel">
-            <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
               <div id="profile-info">
                 <h3>{{profile.userName}}</h3>
-                <p>{{profile.favTeam}}</p>
               </div>
-            </div>
-            <div id="plays">
-              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
-              <p *ngIf="irving">{{profile.irving}} plays</p>
-              <p *ngIf="alberta">{{profile.alberta}} plays</p>
-              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
-              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
-            </div>
+              <div id="plays">
+                <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+                <p *ngIf="irving">{{profile.irving}} plays</p>
+                <p *ngIf="alberta">{{profile.alberta}} plays</p>
+                <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+                <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+              </div>
           </div>
         </div>
       </div>
@@ -182,20 +173,17 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | ColonelSort">
           <div id="leader-panel">
-            <div id="leader-info">
               <img src="{{profile.image}}" alt="profile img">
               <div id="profile-info">
                 <h3>{{profile.userName}}</h3>
-                <p>{{profile.favTeam}}</p>
               </div>
-            </div>
-            <div id="plays">
-              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
-              <p *ngIf="irving">{{profile.irving}} plays</p>
-              <p *ngIf="alberta">{{profile.alberta}} plays</p>
-              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
-              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
-            </div>
+              <div id="plays">
+                <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+                <p *ngIf="irving">{{profile.irving}} plays</p>
+                <p *ngIf="alberta">{{profile.alberta}} plays</p>
+                <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+                <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+              </div>
           </div>
         </div>
       </div>
@@ -203,18 +191,17 @@
         <h2>Leaderboard</h2>
         <div id="leaders" *ngFor="let profile of profiles | LaurelhurstSort">
           <div id="leader-panel">
-            <img src="{{profile.image}}" alt="profile img">
-            <div id="profile-info">
-              <h3>{{profile.userName}}</h3>
-              <p>{{profile.favTeam}}</p>
-            </div>
-            <div id="plays">
-              <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
-              <p *ngIf="irving">{{profile.irving}} plays</p>
-              <p *ngIf="alberta">{{profile.alberta}} plays</p>
-              <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
-              <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
-            </div>
+              <img src="{{profile.image}}" alt="profile img">
+              <div id="profile-info">
+                <h3>{{profile.userName}}</h3>
+              </div>
+              <div id="plays">
+                <p *ngIf="chinatownPark">{{profile.chinatownPark}} plays</p>
+                <p *ngIf="irving">{{profile.irving}} plays</p>
+                <p *ngIf="alberta">{{profile.alberta}} plays</p>
+                <p *ngIf="laurelhurst">{{profile.laurelhurst}} plays</p>
+                <p *ngIf="colonelSummers">{{profile.colonelSummers}} plays</p>
+              </div>
           </div>
         </div>
       </div>
@@ -222,6 +209,6 @@
 
     </div>
     <h1>{{(gameToDisplay | async)?.addInfo}}</h1>
-    <button><a routerLink='/profile'>Back to Profile</a></button>
+    <a routerLink='/profile'><button>Back to Profile</button></a>
   </div>
 </div>
