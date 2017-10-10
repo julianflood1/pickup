@@ -77,11 +77,7 @@ export const masterFirebaseConfig= {
 
 ## Support and contact details
 
-_Email me at
-
-julianflood@gmail.com
-
-if you run into any issues_
+_Email me at julianflood@gmail.com if you run into any issues_
 
 ## Technologies Used
 
