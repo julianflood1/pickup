@@ -12,17 +12,12 @@ https://github.com/julianflood1/pickup
 
 ## Images
 
-### _Character Select Screen_
-![character-select](https://user-images.githubusercontent.com/24885660/28997172-f80f79b8-79c2-11e7-813b-75b7422a160a.png)
-
-### _Gameboard Screen_
-![gameboard-attack](https://user-images.githubusercontent.com/24885660/28997171-f5073206-79c2-11e7-9a0b-3a2416bbe7da.png)
 ### _Welcome Screen_
 ![Splash](https://user-images.githubusercontent.com/24885660/31411401-65fddf8c-adc6-11e7-96af-0887b584f09d.png)
-### _Gameplay Screen_
-![Gameplay](https://user-images.githubusercontent.com/24885660/31411410-6a1935e4-adc6-11e7-8222-b51e01877bc7.png)
 ### _Select Game Screen_
 ![Select](https://user-images.githubusercontent.com/24885660/31411416-6ffc3574-adc6-11e7-9cf6-cb53979f2c04.png)
+### _Gameplay Screen_
+![Gameplay](https://user-images.githubusercontent.com/24885660/31411410-6a1935e4-adc6-11e7-8222-b51e01877bc7.png)
 
 
 
